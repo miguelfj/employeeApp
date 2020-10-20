@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-9">
+    <div class="col-md-9">
       <form [formGroup]="searchForm">
         <div class="form-group">
           <label for="employeeId">Employee Id</label>
@@ -8,7 +8,7 @@
         </div>        
       </form>
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
       <button class="btn btn-primary" (click)="searchEmployee()">Search Employee</button>
     </div>
   </div>
@@ -25,7 +25,7 @@
         <tr *ngFor="let item of employees; index">
           <td> {{ item.name }}</td>
           <td> {{ item.roleName }}</td>
-          <td> {{ item.salary }}</td>
+          <td> {{ item.salary | currency }}</td>
         </tr>
       </tbody>
     </table>
