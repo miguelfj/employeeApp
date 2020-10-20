@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <form [formGroup]="searchForm">
+        <div class="form-group">
+          <label for="employeeId">Employee Id</label>
+          <input formControlName="employeeId" type="text" class="form-control" />
+        </div>        
+      </form>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="searchEmployee()">Search Employee</button>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role Name</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of employees; index">
+          <td> {{ item.name }}</td>
+          <td> {{ item.roleName }}</td>
+          <td> {{ item.salary }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
